@@ -22,9 +22,6 @@ public class Document implements Serializable {
     @Enumerated(EnumType.STRING)
     private SendType sendType;
 
-    @Transient
-    private String contentDecrypt;
-
     public Long getId() {
         return id;
     }
@@ -63,13 +60,5 @@ public class Document implements Serializable {
 
     public void setSendType(SendType sendType) {
         this.sendType = sendType;
-    }
-
-    public String getContentDecrypt() {
-        return contentDecrypt;
-    }
-
-    public void setContentDecrypt(String contentDecrypt) {
-        this.contentDecrypt = contentDecrypt;
     }
 }
