@@ -18,6 +18,8 @@ public class Document implements Serializable {
 
     private String content;
 
+    @Column(length = 5)
+    @Enumerated(EnumType.STRING)
     private SendType sendType;
 
     @Transient

@@ -1,0 +1,41 @@
+server:
+  port: 8010
+  servlet:
+    context-path: /bem-promotora-api
+
+spring:
+  application:
+    name: bem-promotora-api
+  datasource:
+    url: ${db_url}
+    username: ${db_username}
+    password: ${db_password}
+    dbcp2:
+      test-while-idle: true
+      validation-query: SELECT 1
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+  flyway:
+    enabled: true
+    url: ${db_url}
+    user: ${db_username}
+    password: ${db_password}
+
+logging:
+  level:
+    root: INFO, WARN
+    org:
+      springframework:
+        security: INFO
+        web: ERROR
+      hibernate: INFO
+      apache:
+        commons:
+          dbcp2: DEBUG
+  pattern:
+    console: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
