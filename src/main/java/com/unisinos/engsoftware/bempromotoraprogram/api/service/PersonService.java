@@ -10,7 +10,7 @@ public interface PersonService {
 
 	void update(Person person);
 
-	Person getById(Person person);
+	Person getById(Long id);
 
 	Page<Person> list(String fullName, Pageable pageable);
 

@@ -3,6 +3,7 @@ package com.unisinos.engsoftware.bempromotoraprogram.api.service;
 import com.unisinos.engsoftware.bempromotoraprogram.api.domain.Proposal;
 import com.unisinos.engsoftware.bempromotoraprogram.api.domain.ProposalStatus;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface ProposalService {
 
@@ -12,6 +13,6 @@ public interface ProposalService {
 
 	Proposal getById(Long id);
 
-	Page<Proposal> list(ProposalStatus proposalStatus);
+	Page<Proposal> list(ProposalStatus proposalStatus, Pageable pageable);
 
 }
