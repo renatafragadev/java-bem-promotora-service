@@ -60,6 +60,9 @@ public abstract class Person implements Serializable {
     @Fetch(org.hibernate.annotations.FetchMode.SUBSELECT)
     private List<Document> documentList;
 
+    @Transient
+    private Long bankId;
+
     public Long getId() {
         return id;
     }
@@ -194,5 +197,13 @@ public abstract class Person implements Serializable {
 
     public void setDocumentList(List<Document> documentList) {
         this.documentList = documentList;
+    }
+
+    public Long getBankId() {
+        return bankId;
+    }
+
+    public void setBankId(Long bankId) {
+        this.bankId = bankId;
     }
 }

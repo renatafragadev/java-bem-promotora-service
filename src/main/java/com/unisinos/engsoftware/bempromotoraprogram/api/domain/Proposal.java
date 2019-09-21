@@ -31,6 +31,9 @@ public class Proposal implements Serializable {
 	@JoinColumn(name = "person_id")
 	private Person person;
 
+	@Transient
+	private Long personId;
+
 	public Long getId() {
 		return id;
 	}
@@ -93,5 +96,13 @@ public class Proposal implements Serializable {
 
 	public void setPerson(Person person) {
 		this.person = person;
+	}
+
+	public Long getPersonId() {
+		return personId;
+	}
+
+	public void setPersonId(Long personId) {
+		this.personId = personId;
 	}
 }
